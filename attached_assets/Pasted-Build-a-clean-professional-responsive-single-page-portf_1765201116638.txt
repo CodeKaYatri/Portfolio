@@ -1,0 +1,26 @@
+Build a clean, professional, responsive single-page portfolio using React (functional components) + Tailwind CSS. Theme aisa ho jo aankhon ko sukoon de — soft neutral palette (off-white / very light beige background), gentle pastel accents (muted teal / soft slate blue), ample white-space, clear typography (system fonts + good line-height), visible CTAs and comfortable spacing. Design must be accessible (keyboard navigable, ARIA labels, high contrast text), mobile-first, and SEO-friendly (meta title/description + Open Graph tags).
+
+Include these sections and features:
+1. Hero: Name “Chandan Kumar”, tagline “Final-year BCA student | Aspiring [Your Role]”, professional photo placeholder, primary CTA “Contact Me” that scrolls to Contact.
+2. About: short bio mentioning “pursuing final year BCA”, skills list with progress bars, short bullet highlights (education, interests).
+3. Projects: 3–6 project cards loaded from a local JSON (image placeholder, title, short description, tech tags, links: Live / Demo / Repo). Clicking a card opens a modal with detailed description and screenshots (lazy-loaded).
+4. Experience / Education: clean timeline with education entry “BCA — Final Year” and space for internships/roles.
+5. Skills: categorized icons (Frontend / Backend / Tools), search/filter optional.
+6. Testimonials: lightweight carousel (or simple slider).
+7. Blog preview (optional): show 2 recent posts from a simple markdown/JSON source.
+8. Contact: contact form wired to EmailJS using the email chandansoni60632@gmail.com, plus mailto link and social icons. Validate form and show success/error states.
+9. Footer: social links, copyright (“© Chandan Kumar — [current year]”), quick links.
+
+Technical requirements:
+- Use React + Tailwind, keep bundle light (no heavy UI libs). Small carousel library allowed.
+- Store projects and blog metadata in JSON and load dynamically.
+- Optimize for performance: lazy-load images, use <picture> with srcset for responsiveness, code-splitting for modals/routes.
+- Accessibility: semantic HTML, focus management for modals, skip-to-content link.
+- Add dark-mode toggle (prefers-color-scheme aware) as optional.
+- Provide a clean components/ folder structure and a README with step-by-step Replit deploy instructions (npm install; npm run dev/start), environment variable notes for EmailJS, and a short deploy checklist.
+- Include SEO meta tags, Open Graph, and a simple sitemap.json.
+- Provide a short deploy checklist and a ZIP-ready build script.
+
+Visual / copy tone: minimal, professional, calm — headings slightly larger, soft shadows on cards, subtle hover states, smooth scroll, readable spacing so site feels restful.
+
+Make final output ready-to-deploy on Replit (include package.json scripts), with well-structured, production-ready code and brief comments where helpful. Use my name and email exactly as provided.
