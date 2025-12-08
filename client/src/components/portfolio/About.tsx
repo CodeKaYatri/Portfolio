@@ -1,21 +1,26 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { GraduationCap, Code, Coffee, Gamepad2 } from "lucide-react";
+import { GraduationCap, Code, Award, Keyboard } from "lucide-react";
 
 const skills = [
-  { name: "React / JavaScript", level: 85 },
-  { name: "HTML / CSS", level: 90 },
-  { name: "TypeScript", level: 75 },
-  { name: "Node.js", level: 70 },
-  { name: "Python", level: 65 },
-  { name: "SQL / Databases", level: 70 },
+  { name: "C / C++", level: 80 },
+  { name: "Python", level: 82 },
+  { name: "Java", level: 70 },
+  { name: "SQL / Databases", level: 75 },
+  { name: "Computer Fundamentals", level: 90 },
+  { name: "Power BI", level: 75 },
+];
+
+const typingSkills = [
+  { name: "English Typing", speed: "74 WPM" },
+  { name: "Hindi Typing", speed: "44 WPM" },
 ];
 
 const highlights = [
-  { icon: GraduationCap, title: "Education", description: "BCA Final Year Student" },
-  { icon: Code, title: "Focus", description: "Full Stack Web Development" },
-  { icon: Coffee, title: "Passion", description: "Clean, Accessible Code" },
-  { icon: Gamepad2, title: "Interests", description: "Gaming, Music, Tech" },
+  { icon: GraduationCap, title: "Education", description: "BCA Final Year (2026)" },
+  { icon: Code, title: "Focus", description: "Programming & Development" },
+  { icon: Award, title: "Certifications", description: "NPTEL Python, Power BI" },
+  { icon: Keyboard, title: "Typing", description: "74 WPM English" },
 ];
 
 export default function About() {
@@ -36,15 +41,13 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-6">
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Hi! I'm <strong className="text-foreground">Chandan Kumar</strong>, a final-year BCA student 
-              passionate about web development and creating meaningful digital experiences. My journey 
-              in technology started with curiosity and has grown into a dedicated pursuit of building 
-              accessible, performant, and beautiful applications.
+              Hi! I'm <strong className="text-foreground">Chandan Kumar</strong>, pursuing my BCA final year 
+              (completing in 2026). I am passionate about technology, programming, and modern software solutions.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I specialize in front-end development with React and have been expanding my skills 
-              to become a full-stack developer. I believe in writing clean code, following best 
-              practices, and never stopping learning.
+              I have strong fundamentals in computer science and problem-solving. I enjoy creating clean, 
+              optimized, and structured applications. My expertise includes C, C++, Python, Java, and SQL, 
+              along with tools like Power BI for data visualization.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
@@ -62,6 +65,23 @@ export default function About() {
                 </Card>
               ))}
             </div>
+
+            <Card className="bg-muted/30">
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <Keyboard className="h-4 w-4 text-primary" />
+                  Typing Speed
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {typingSkills.map((skill) => (
+                    <div key={skill.name} className="text-center p-3 bg-background rounded-lg">
+                      <p className="text-2xl font-bold text-primary">{skill.speed}</p>
+                      <p className="text-sm text-muted-foreground">{skill.name}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="space-y-6">

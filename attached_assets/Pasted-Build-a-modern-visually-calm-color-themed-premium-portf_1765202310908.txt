@@ -1,0 +1,133 @@
+Build a modern, visually calm, color-themed, premium portfolio website using React (functional components) + Tailwind CSS.  
+Use a soothing theme based on soft neutral tones (off-white #FAF9F6, very light beige), pastel teal, pastel blue, and subtle gradients.  
+Layout must be clean, airy, spacious, minimal, and eye-friendly with soft shadows, smooth animations, and gentle hover states.  
+Design should feel peaceful, modern, and professional.
+
+==========================
+## PERSONAL DETAILS TO USE
+==========================
+Name: Chandan Kumar  
+Tagline: "Pursuing BCA Final Year (Completing in 2026)"  
+Email: chandansoni60632@gmail.com  
+LinkedIn: https://www.linkedin.com/in/chandan-kumar-303478379/  
+GitHub: https://github.com/CodeKaYatri  
+Photo Section: Include a well-designed placeholder area for profile photo.
+
+About Me Summary:
+- I am Chandan Kumar, pursuing my BCA final year (completing 2026).  
+- I am passionate about technology, programming, and modern software solutions.  
+- I have strong fundamentals in computer science and problem-solving.  
+- I enjoy creating clean, optimized, and structured applications.
+
+Skills:
+- Typing Speed: English 74 WPM, Hindi 44 WPM  
+- Programming: C, C++, Python, SQL, Java  
+- Knowledge: Computer basics & fundamentals  
+- Tools: Power BI (Certified)
+
+Certifications:
+- NPTEL Swayam Python Course (82%) – “The Joy of Programming Using Python”  
+- Skill Nation – Power BI Certification
+
+Main Project:
+- Student Management System (built using C, with the help of AI techniques)
+- Add image placeholder, GitHub link, description, tech stack, future improvements section.
+
+==========================
+## WEBSITE FEATURES REQUIRED
+==========================
+
+1. HERO SECTION
+   - Clean two-column layout.
+   - Left: Name, tagline, short intro.
+   - Right: Photo placeholder with circular frame and soft glow.
+   - CTA buttons: “View Projects” + “Contact Me”
+   - Subtle gradient background.
+
+2. ABOUT SECTION
+   - Soft card design with calm pastel borders.
+   - Focus on education, certification, typing skills, coding skills.
+   - Use icon-based layout for clean look.
+
+3. SKILLS SECTION
+   - Categorized as Programming, Typing, Tools, Knowledge.
+   - Use pastel gradient progress bars or skill cards.
+   - Make it elegant with soft hover effects.
+
+4. PROJECTS SECTION
+   - Minimum 3 cards; include main project:
+     “Student Management System using C + AI Support”.
+   - Each card must include:
+       - Title
+       - Description
+       - Tech used
+       - GitHub link
+       - Screenshot placeholder
+   - Clicking opens a modal with full details.
+   - Modal must be accessible: focus trap, ESC close.
+
+5. EXPERIENCE / EDUCATION TIMELINE
+   - Add timeline style:
+       - 2023–2026: BCA Degree, completing in 2026.
+   - Add clean vertical timeline dots with smooth animation.
+
+6. CERTIFICATION SECTION
+   - Beautiful certificate cards.
+   - Include:
+       - NPTEL Python (82%)
+       - Power BI Skill Nation Certificate
+
+7. CONTACT SECTION
+   - Use EmailJS integration.
+   - Contact form with validation for name, email, message.
+   - Include icons for LinkedIn & GitHub.
+   - Add mailto fallback.
+   - Clean, minimal layout.
+
+8. FOOTER
+   - Soft neutral background.
+   - Copyright:
+     “© Chandan Kumar — 2025”
+   - Include social icons + quick links.
+
+==========================
+## DESIGN REQUIREMENTS
+==========================
+- Eye-soothing soft color theme
+- Pastel teal + pastel blue accents
+- Large spacing, clean typography
+- Soft neumorphic shadows
+- Smooth CSS transitions + scroll animations
+- Mobile-first responsive layout
+- Accessible components (ARIA labels, focus-visible)
+- Semantic HTML structure
+
+==========================
+## TECHNICAL REQUIREMENTS
+==========================
+- React + Tailwind CSS
+- File structure:
+    src/components
+    src/data
+    src/assets/images
+    public/
+- Use JSON for projects & certifications.
+- Lazy-load images
+- <picture> with srcset for responsive images
+- Add dark mode toggle (optional but recommended)
+- Provide README with setup + run instructions.
+- Build scripts:
+    "dev", "build", "start"
+- Add SEO meta tags + Open Graph tags
+- Add sitemap.json
+
+==========================
+## DELIVERABLES
+==========================
+- Complete working React portfolio
+- All components structured, reusable, clean
+- Production-quality UI
+- Calm, premium aesthetic
+- Ready to deploy on Replit
+
+Generate the full project code now.

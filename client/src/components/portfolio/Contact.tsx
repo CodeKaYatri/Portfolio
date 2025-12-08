@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Send, Github, Linkedin, Twitter, Loader2 } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin, Loader2 } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -21,9 +21,8 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "https://github.com", label: "Visit GitHub profile" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com", label: "Visit LinkedIn profile" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com", label: "Visit Twitter profile" },
+  { name: "GitHub", icon: Github, href: "https://github.com/CodeKaYatri", label: "Visit GitHub profile" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/chandan-kumar-303478379/", label: "Visit LinkedIn profile" },
 ];
 
 export default function Contact() {
@@ -44,17 +43,21 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // todo: Configure EmailJS with your service ID, template ID, and public key
-      // emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-      //   from_name: data.name,
-      //   from_email: data.email,
-      //   subject: data.subject,
-      //   message: data.message,
-      //   to_email: "chandansoni60632@gmail.com",
-      // }, "YOUR_PUBLIC_KEY");
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
       
-      // Simulating API call for demo
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      if (serviceId && templateId && publicKey) {
+        await emailjs.send(serviceId, templateId, {
+          from_name: data.name,
+          from_email: data.email,
+          subject: data.subject,
+          message: data.message,
+          to_email: "chandansoni60632@gmail.com",
+        }, publicKey);
+      } else {
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+      }
       
       toast({
         title: "Message sent!",
@@ -91,7 +94,7 @@ export default function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <Card>
+          <Card className="overflow-visible">
             <CardContent className="p-6">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
@@ -247,7 +250,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <Card className="bg-primary/5 border-primary/20">
+            <Card className="bg-primary/5 border-primary/20 overflow-visible">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-foreground mb-2">Let's Work Together</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">

@@ -1,43 +1,46 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { 
-  SiReact, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiTailwindcss,
-  SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiPython, SiFirebase,
-  SiGit, SiGithub, SiFigma, SiPostman, SiVercel
+  SiC, SiCplusplus, SiPython, SiMysql, SiGit, SiGithub
 } from "react-icons/si";
-import { Code } from "lucide-react";
+import { Code, Keyboard, Monitor, Wrench, BarChart3 } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Programming",
+    icon: Code,
     skills: [
-      { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-      { name: "CSS3", icon: SiCss3, color: "#1572B6" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "C", icon: SiC, level: 80 },
+      { name: "C++", icon: SiCplusplus, level: 80 },
+      { name: "Python", icon: SiPython, level: 82 },
+      { name: "SQL", icon: SiMysql, level: 75 },
     ],
   },
   {
-    title: "Backend",
+    title: "Typing",
+    icon: Keyboard,
     skills: [
-      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "Express", icon: SiExpress, color: "#000000" },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
-      { name: "Python", icon: SiPython, color: "#3776AB" },
-      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "English", speed: "74 WPM", level: 85 },
+      { name: "Hindi", speed: "44 WPM", level: 70 },
     ],
   },
   {
-    title: "Tools & Platforms",
+    title: "Tools",
+    icon: Wrench,
     skills: [
-      { name: "Git", icon: SiGit, color: "#F05032" },
-      { name: "GitHub", icon: SiGithub, color: "#181717" },
-      { name: "VS Code", icon: Code, color: "#007ACC" },
-      { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
-      { name: "Vercel", icon: SiVercel, color: "#000000" },
+      { name: "Power BI", icon: BarChart3, level: 75 },
+      { name: "Git", icon: SiGit, level: 70 },
+      { name: "GitHub", icon: SiGithub, level: 75 },
+    ],
+  },
+  {
+    title: "Knowledge",
+    icon: Monitor,
+    skills: [
+      { name: "Computer Basics", level: 95 },
+      { name: "Problem Solving", level: 85 },
+      { name: "Data Structures", level: 75 },
+      { name: "Algorithms", level: 70 },
     ],
   },
 ];
@@ -52,39 +55,47 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 id="skills-heading" className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Technical Skills
+            Skills & Expertise
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Technologies and tools I work with to bring ideas to life.
+            My technical skills and areas of expertise in programming and technology.
           </p>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-4" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {skillCategories.map((category) => (
-            <Card key={category.title} className="hover-elevate">
+            <Card key={category.title} className="hover-elevate overflow-visible">
               <CardHeader className="pb-4">
-                <CardTitle className="text-xl text-center">{category.title}</CardTitle>
+                <CardTitle className="text-xl flex items-center gap-2">
+                  <category.icon className="h-5 w-5 text-primary" />
+                  {category.title}
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-3 gap-4">
-                  {category.skills.map((skill) => (
-                    <div 
-                      key={skill.name}
-                      className="flex flex-col items-center gap-2 p-3 rounded-lg bg-muted/50 hover-elevate transition-all"
-                      title={skill.name}
-                    >
-                      <skill.icon 
-                        className="h-8 w-8 transition-colors" 
-                        style={{ color: skill.color }}
-                        aria-hidden="true"
-                      />
-                      <span className="text-xs text-muted-foreground text-center font-medium">
-                        {skill.name}
-                      </span>
+              <CardContent className="space-y-4">
+                {category.skills.map((skill) => (
+                  <div key={skill.name} className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2">
+                        {'icon' in skill && skill.icon && (
+                          <skill.icon className="h-5 w-5 text-muted-foreground" />
+                        )}
+                        <span className="text-foreground font-medium">{skill.name}</span>
+                        {'speed' in skill && (
+                          <span className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                            {skill.speed}
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-muted-foreground text-sm">{skill.level}%</span>
                     </div>
-                  ))}
-                </div>
+                    <Progress 
+                      value={skill.level} 
+                      className="h-2"
+                      aria-label={`${skill.name} proficiency: ${skill.level}%`}
+                    />
+                  </div>
+                ))}
               </CardContent>
             </Card>
           ))}

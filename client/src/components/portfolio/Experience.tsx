@@ -1,37 +1,43 @@
-import { GraduationCap, Briefcase } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { GraduationCap, BookOpen, Award } from "lucide-react";
 
-const timelineItems = [
+const timeline = [
   {
+    id: 1,
     type: "education",
     title: "Bachelor of Computer Applications (BCA)",
-    organization: "University Name",
-    period: "2022 - Present (Final Year)",
-    description: "Pursuing BCA with focus on web development, database management, and software engineering principles. Maintaining strong academic performance while working on practical projects.",
+    organization: "University",
+    period: "2023 - 2026",
+    description: "Pursuing BCA final year with focus on computer science fundamentals, programming languages, database management, and software development. Building strong foundation in problem-solving and analytical thinking.",
     icon: GraduationCap,
+    current: true,
   },
   {
-    type: "experience",
-    title: "Web Development Intern",
-    organization: "Tech Startup",
-    period: "Summer 2024",
-    description: "Collaborated with senior developers to build responsive web applications. Gained hands-on experience with React, Node.js, and modern development workflows.",
-    icon: Briefcase,
+    id: 2,
+    type: "certification",
+    title: "NPTEL Python Certification",
+    organization: "NPTEL Swayam",
+    period: "2024",
+    description: "Completed 'The Joy of Programming Using Python' course with 82% score. Gained expertise in Python programming, data structures, and algorithmic problem solving.",
+    icon: Award,
   },
   {
-    type: "experience",
-    title: "Freelance Web Developer",
-    organization: "Self-Employed",
-    period: "2023 - Present",
-    description: "Working with small businesses and individuals to create custom websites and web applications. Managing projects from concept to deployment.",
-    icon: Briefcase,
+    id: 3,
+    type: "certification",
+    title: "Power BI Certification",
+    organization: "Skill Nation",
+    period: "2024",
+    description: "Earned professional certification in Microsoft Power BI for business intelligence and data visualization. Learned data modeling, DAX, and creating interactive dashboards.",
+    icon: Award,
   },
   {
-    type: "education",
-    title: "Higher Secondary (12th)",
-    organization: "School Name",
-    period: "2020 - 2022",
-    description: "Completed higher secondary education with focus on Science and Computer Science. Developed foundational programming skills.",
-    icon: GraduationCap,
+    id: 4,
+    type: "project",
+    title: "Student Management System",
+    organization: "Personal Project",
+    period: "2024",
+    description: "Developed a comprehensive student management system using C programming with AI-assisted techniques. Implemented features for student records, grades, and attendance tracking.",
+    icon: BookOpen,
   },
 ];
 
@@ -45,39 +51,60 @@ export default function Experience() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 id="experience-heading" className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Experience & Education
+            Education & Journey
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            My journey through academics and professional experiences.
+            My academic journey and professional development milestones.
           </p>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-4" />
         </div>
 
         <div className="relative">
-          <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-border" aria-hidden="true" />
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
 
           <div className="space-y-8">
-            {timelineItems.map((item, index) => (
-              <div 
-                key={index}
-                className={`relative flex flex-col md:flex-row gap-4 md:gap-8 ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center z-10">
-                  <item.icon className="h-4 w-4 text-primary-foreground" />
-                </div>
-
-                <div className={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"}`}>
-                  <div className="bg-card border border-card-border rounded-lg p-5 hover-elevate transition-all">
-                    <span className="text-sm text-muted-foreground font-medium">{item.period}</span>
-                    <h3 className="text-lg font-semibold text-foreground mt-1">{item.title}</h3>
-                    <p className="text-primary font-medium text-sm">{item.organization}</p>
-                    <p className="text-muted-foreground text-sm mt-2 leading-relaxed">{item.description}</p>
+            {timeline.map((item, index) => (
+              <div key={item.id} className="relative flex gap-6 md:gap-8">
+                <div className="hidden md:flex flex-col items-center">
+                  <div 
+                    className={`w-16 h-16 rounded-full flex items-center justify-center z-10 ${
+                      item.current 
+                        ? 'bg-primary text-primary-foreground' 
+                        : 'bg-muted text-muted-foreground'
+                    }`}
+                  >
+                    <item.icon className="h-6 w-6" />
                   </div>
+                  {index < timeline.length - 1 && (
+                    <div className="flex-1 w-0.5 bg-transparent" />
+                  )}
                 </div>
 
-                <div className="hidden md:block flex-1" aria-hidden="true" />
+                <Card className={`flex-1 hover-elevate overflow-visible ${item.current ? 'border-primary/50' : ''}`}>
+                  <CardContent className="p-6">
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                      <div className="flex items-center gap-3">
+                        <div className="md:hidden p-2 bg-primary/10 rounded-lg">
+                          <item.icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground text-lg">{item.title}</h3>
+                          <p className="text-muted-foreground text-sm">{item.organization}</p>
+                        </div>
+                      </div>
+                      <span className={`text-sm font-medium px-3 py-1 rounded-full ${
+                        item.current 
+                          ? 'bg-primary/10 text-primary' 
+                          : 'bg-muted text-muted-foreground'
+                      }`}>
+                        {item.period}
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             ))}
           </div>

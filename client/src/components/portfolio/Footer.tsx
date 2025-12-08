@@ -1,24 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const quickLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
+  { href: "#certifications", label: "Certifications" },
   { href: "#contact", label: "Contact" },
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+  { icon: Github, href: "https://github.com/CodeKaYatri", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/chandan-kumar-303478379/", label: "LinkedIn" },
   { icon: Mail, href: "mailto:chandansoni60632@gmail.com", label: "Email" },
 ];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -31,8 +28,8 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold text-foreground mb-4">Chandan Kumar</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Final-year BCA student passionate about creating beautiful, 
-              accessible, and user-friendly web experiences.
+              BCA Final Year Student (2026) passionate about technology, 
+              programming, and creating clean, optimized software solutions.
             </p>
           </div>
 
@@ -67,8 +64,8 @@ export default function Footer() {
                 >
                   <a
                     href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={social.href.startsWith("mailto") ? undefined : "_blank"}
+                    rel={social.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                     aria-label={social.label}
                     data-testid={`link-footer-social-${social.label.toLowerCase()}`}
                   >
@@ -77,16 +74,19 @@ export default function Footer() {
                 </Button>
               ))}
             </div>
+            <p className="text-muted-foreground text-sm mt-3">
+              chandansoni60632@gmail.com
+            </p>
           </div>
         </div>
 
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm text-center sm:text-left">
-              © {currentYear} Chandan Kumar. All rights reserved.
+              &copy; Chandan Kumar — 2025. All rights reserved.
             </p>
             <p className="text-muted-foreground text-sm flex items-center gap-1">
-              Made with <Heart className="h-4 w-4 text-destructive" aria-label="love" /> in India
+              Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" aria-label="love" /> in India
             </p>
           </div>
         </div>
