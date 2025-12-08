@@ -13,6 +13,7 @@ const certifications = [
     description: "A comprehensive course covering Python programming fundamentals, data structures, algorithms, and problem-solving techniques. Achieved a score of 82% in the final assessment.",
     skills: ["Python", "Programming", "Problem Solving", "Data Structures"],
     verified: true,
+    image: "/Screenshot 2025-12-08 214404.jpg",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const certifications = [
     description: "Professional certification in Microsoft Power BI for business intelligence and data visualization. Covers data modeling, DAX formulas, report creation, and dashboard design.",
     skills: ["Power BI", "Data Visualization", "Business Intelligence", "DAX"],
     verified: true,
+    image: "/Screenshot 2025-12-08 214905.jpg",
   },
 ];
 
@@ -46,7 +48,7 @@ export default function Certifications() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {certifications.map((cert) => (
-            <Card key={cert.id} className="hover-elevate overflow-visible">
+            <Card key={cert.id} className="hover-elevate overflow-visible card-3d">
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-3">
@@ -64,6 +66,16 @@ export default function Certifications() {
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
+                {cert.image && (
+                  <div className="rounded-lg overflow-hidden border border-border shadow-md">
+                    <img 
+                      src={cert.image} 
+                      alt={`${cert.title} Certificate`}
+                      className="w-full h-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {cert.description}
                 </p>

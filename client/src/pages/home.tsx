@@ -5,13 +5,14 @@ import Projects from "@/components/portfolio/Projects";
 import Experience from "@/components/portfolio/Experience";
 import Skills from "@/components/portfolio/Skills";
 import Certifications from "@/components/portfolio/Certifications";
+import Resume from "@/components/portfolio/Resume";
 import Testimonials from "@/components/portfolio/Testimonials";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background bg-animated-3d">
       <Navigation />
       <main id="main-content">
         <Hero />
@@ -20,6 +21,7 @@ export default function Home() {
         <Experience />
         <Skills />
         <Certifications />
+        <Resume />
         <Testimonials />
         <Contact />
       </main>

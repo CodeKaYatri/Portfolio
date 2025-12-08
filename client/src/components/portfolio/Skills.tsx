@@ -10,10 +10,10 @@ const skillCategories = [
     title: "Programming",
     icon: Code,
     skills: [
-      { name: "C", icon: SiC, level: 80 },
-      { name: "C++", icon: SiCplusplus, level: 80 },
-      { name: "Python", icon: SiPython, level: 82 },
-      { name: "SQL", icon: SiMysql, level: 75 },
+      { name: "C", icon: SiC, level: 60 },
+      { name: "C++", icon: SiCplusplus, level: 60 },
+      { name: "Python", icon: SiPython, level: 40 },
+      { name: "SQL", icon: SiMysql, level: 40 },
     ],
   },
   {
@@ -28,7 +28,7 @@ const skillCategories = [
     title: "Tools",
     icon: Wrench,
     skills: [
-      { name: "Power BI", icon: BarChart3, level: 75 },
+      { name: "Power BI", icon: BarChart3, level: 60 },
       { name: "Git", icon: SiGit, level: 70 },
       { name: "GitHub", icon: SiGithub, level: 75 },
     ],
@@ -65,7 +65,7 @@ export default function Skills() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {skillCategories.map((category) => (
-            <Card key={category.title} className="hover-elevate overflow-visible">
+            <Card key={category.title} className="hover-elevate overflow-visible card-3d">
               <CardHeader className="pb-4">
                 <CardTitle className="text-xl flex items-center gap-2">
                   <category.icon className="h-5 w-5 text-primary" />

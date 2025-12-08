@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, Eye } from "lucide-react";
-import heroImage from "@assets/generated_images/professional_developer_headshot_placeholder.png";
 
 export default function Hero() {
   const handleContactClick = () => {
@@ -113,7 +112,7 @@ export default function Hero() {
               <div className="absolute inset-0 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl" />
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
                 <img
-                  src={heroImage}
+                  src="/chandan.jpg"
                   alt="Chandan Kumar - Professional headshot"
                   className="w-full h-full object-cover"
                   loading="eager"

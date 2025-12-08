@@ -3,12 +3,12 @@ import { Progress } from "@/components/ui/progress";
 import { GraduationCap, Code, Award, Keyboard } from "lucide-react";
 
 const skills = [
-  { name: "C / C++", level: 80 },
-  { name: "Python", level: 82 },
-  { name: "Java", level: 70 },
-  { name: "SQL / Databases", level: 75 },
+  { name: "C / C++", level: 60 },
+  { name: "Python", level: 40 },
+  { name: "Java", level: 30 },
+  { name: "SQL / Databases", level: 40 },
   { name: "Computer Fundamentals", level: 90 },
-  { name: "Power BI", level: 75 },
+  { name: "Power BI", level: 60 },
 ];
 
 const typingSkills = [
@@ -52,7 +52,7 @@ export default function About() {
 
             <div className="grid grid-cols-2 gap-4">
               {highlights.map((item) => (
-                <Card key={item.title} className="hover-elevate">
+                <Card key={item.title} className="hover-elevate card-3d">
                   <CardContent className="p-4 flex items-start gap-3">
                     <div className="p-2 bg-primary/10 rounded-md">
                       <item.icon className="h-5 w-5 text-primary" />
