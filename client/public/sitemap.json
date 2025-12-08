@@ -1,0 +1,30 @@
+{
+  "urlset": {
+    "url": [
+      {
+        "loc": "https://chandankumar.dev/",
+        "lastmod": "2025-01-01",
+        "changefreq": "monthly",
+        "priority": "1.0"
+      },
+      {
+        "loc": "https://chandankumar.dev/#about",
+        "lastmod": "2025-01-01",
+        "changefreq": "monthly",
+        "priority": "0.8"
+      },
+      {
+        "loc": "https://chandankumar.dev/#projects",
+        "lastmod": "2025-01-01",
+        "changefreq": "monthly",
+        "priority": "0.8"
+      },
+      {
+        "loc": "https://chandankumar.dev/#contact",
+        "lastmod": "2025-01-01",
+        "changefreq": "monthly",
+        "priority": "0.8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Dashboard Analytics",
+    "shortDescription": "A modern analytics dashboard with real-time data visualization and interactive charts.",
+    "fullDescription": "A comprehensive analytics dashboard built with React and Chart.js. Features include real-time data updates, customizable widgets, dark mode support, and responsive design. The dashboard provides insights into user behavior, sales metrics, and performance indicators.",
+    "image": "dashboard",
+    "technologies": ["React", "TypeScript", "Chart.js", "Tailwind CSS"],
+    "liveUrl": "#",
+    "repoUrl": "#",
+    "demoUrl": "#"
+  },
+  {
+    "id": 2,
+    "title": "E-Commerce Mobile App",
+    "shortDescription": "A sleek mobile shopping app with cart management and secure checkout.",
+    "fullDescription": "Full-featured e-commerce mobile application with product browsing, search functionality, wishlist, shopping cart, and secure payment integration. Built with React Native for cross-platform compatibility.",
+    "image": "mobile",
+    "technologies": ["React Native", "Node.js", "MongoDB", "Stripe"],
+    "liveUrl": "#",
+    "repoUrl": "#",
+    "demoUrl": "#"
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Website",
+    "shortDescription": "A clean, responsive portfolio template with smooth animations and dark mode.",
+    "fullDescription": "A modern portfolio website template featuring smooth scroll animations, project showcases, contact form integration, and accessibility-first design. Fully responsive and optimized for performance.",
+    "image": "portfolio",
+    "technologies": ["React", "Tailwind CSS", "Framer Motion", "EmailJS"],
+    "liveUrl": "#",
+    "repoUrl": "#",
+    "demoUrl": "#"
+  },
+  {
+    "id": 4,
+    "title": "Task Management App",
+    "shortDescription": "A productivity app for organizing tasks with drag-and-drop functionality.",
+    "fullDescription": "A Kanban-style task management application with features like drag-and-drop, task categories, due dates, priority levels, and team collaboration. Syncs across devices in real-time.",
+    "image": "dashboard",
+    "technologies": ["React", "Redux", "Firebase", "Material UI"],
+    "liveUrl": "#",
+    "repoUrl": "#",
+    "demoUrl": "#"
+  }
+]

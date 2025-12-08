@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Priya Sharma",
+    "role": "Project Lead, TechCorp",
+    "content": "Chandan delivered exceptional work on our web application. His attention to detail and problem-solving skills made our project a success.",
+    "avatar": "PS"
+  },
+  {
+    "id": 2,
+    "name": "Rahul Verma",
+    "role": "Senior Developer, StartupX",
+    "content": "Working with Chandan was a pleasure. He quickly grasped complex requirements and delivered clean, maintainable code ahead of schedule.",
+    "avatar": "RV"
+  },
+  {
+    "id": 3,
+    "name": "Anita Desai",
+    "role": "Professor, ABC University",
+    "content": "One of the most dedicated students I have mentored. Chandan consistently demonstrates strong technical skills and a passion for learning.",
+    "avatar": "AD"
+  }
+]
