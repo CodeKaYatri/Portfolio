@@ -9,10 +9,12 @@ import Resume from "@/components/portfolio/Resume";
 import Testimonials from "@/components/portfolio/Testimonials";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
+import LoadingScreen from "@/components/portfolio/LoadingScreen";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background bg-animated-3d">
+    <div className="min-h-screen bg-background bg-animated-3d animate-page-enter">
+      <LoadingScreen />
       <Navigation />
       <main id="main-content">
         <Hero />
