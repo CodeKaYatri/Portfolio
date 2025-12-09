@@ -1,9 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "dist/index.cjs", "use": "@vercel/node" }
+    { "src": "client/index.html", "use": "@vercel/static" },
+    { "src": "client/public/**", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/dist/index.cjs" }
+    { "src": "/(.*)", "dest": "/client/index.html" }
   ]
 }
